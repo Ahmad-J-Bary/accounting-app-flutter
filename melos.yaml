@@ -1,0 +1,24 @@
+name: accounting_app_flutter
+repository: https://github.com/yourusername/accounting-app-flutter
+sdkPath: .fvm/flutter_sdk
+
+command:
+  bootstrap:
+    runPubGetInParallel: false
+    usePubspecOverrides: true
+
+  clean:
+    hooks:
+      post: melos exec -- flutter clean
+
+  format:
+    hooks:
+      post: dart format .
+
+  analyze:
+    hooks:
+      post: dart analyze .
+
+packages:
+  - apps/*
+  - packages/**/
