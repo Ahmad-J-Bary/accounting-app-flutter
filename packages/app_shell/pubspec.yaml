@@ -1,0 +1,40 @@
+name: app_shell
+description: Application shell with navigation and layout
+publish_to: none
+version: 0.1.0
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Design System
+  design_system:
+    path: ../design_system
+
+  # Core Packages
+  shared:
+    path: ../shared
+
+  # State Management
+  flutter_riverpod: ^2.4.9
+
+  # Navigation
+  go_router: ^13.0.0
+
+  # Localization
+  easy_localization: ^3.0.3
+
+  # Icons
+  phosphor_flutter: ^2.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
