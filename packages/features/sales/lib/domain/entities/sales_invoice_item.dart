@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:shared/shared.dart';
+import 'package:foundation/foundation.dart';
 
 class SalesInvoiceItem extends Equatable {
   final UniqueId id;

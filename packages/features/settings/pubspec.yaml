@@ -8,13 +8,10 @@ environment:
 
 dependencies:
   foundation:
-    path: ../../core
-  foundation:
-    path: ../../shared
+    path: ../../foundation
   platform:
-    path: ../../networking
-  platform:
-    path: ../../storage
+    path: ../../platform
+  shared_preferences: ^2.2.2
 
   dartz: ^0.10.1
   equatable: ^2.0.5

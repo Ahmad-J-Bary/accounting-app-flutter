@@ -8,23 +8,20 @@ environment:
 
 dependencies:
   foundation:
-    path: ../../core
-  foundation:
-    path: ../../shared
+    path: ../../foundation
   platform:
-    path: ../../networking
-  platform:
-    path: ../../storage
+    path: ../../platform
   accounting:
     path: ../accounting
   journal:
     path: ../journal
-  customers:
-    path: ../customers
+  partners:
+    path: ../partners
+  products:
+    path: ../products
 
   dartz: ^0.10.1
   equatable: ^2.0.5
-  uuid: ^4.3.1
 
 dev_dependencies:
   flutter_test:

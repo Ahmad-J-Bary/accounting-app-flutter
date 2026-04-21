@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:shared/shared.dart';
+import 'package:foundation/foundation.dart';
 
 class JournalLine extends Equatable {
   final UniqueId id;
