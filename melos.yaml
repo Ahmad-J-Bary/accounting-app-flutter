@@ -19,6 +19,40 @@ command:
     hooks:
       post: dart analyze .
 
+scripts:
+  bootstrap:
+    run: melos bootstrap
+    description: Install all dependencies and link local packages.
+
+  analyze:
+    run: flutter analyze
+    description: Run static analysis across the monorepo.
+
+  test:
+    run: flutter test
+    description: Run all tests across packages and apps.
+
+  format:
+    run: dart format .
+    description: Format all Dart files.
+
+  clean:
+    run: flutter clean
+    description: Clean all Flutter apps and packages.
+
+  pub_get:
+    run: flutter pub get
+    description: Fetch dependencies for all packages.
+
+  build_runner:
+    run: dart run build_runner build --delete-conflicting-outputs
+    description: Run code generation where needed.
+
 packages:
   - apps/*
-  - packages/**/
+  - packages/foundation
+  - packages/design_system
+  - packages/platform
+  - packages/app_shell
+  - packages/workflows
+  - packages/features/**/

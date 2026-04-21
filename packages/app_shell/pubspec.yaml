@@ -16,8 +16,8 @@ dependencies:
     path: ../design_system
 
   # Core Packages
-  shared:
-    path: ../shared
+  foundation:
+    path: ../foundation
 
   # State Management
   flutter_riverpod: ^2.4.9
