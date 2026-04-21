@@ -1,0 +1,28 @@
+name: payments
+description: Payments feature package
+publish_to: none
+version: 0.1.0
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  core:
+    path: ../../core
+  shared:
+    path: ../../shared
+  networking:
+    path: ../../networking
+  storage:
+    path: ../../storage
+  accounting:
+    path: ../accounting
+
+  dartz: ^0.10.1
+  equatable: ^2.0.5
+  uuid: ^4.3.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0

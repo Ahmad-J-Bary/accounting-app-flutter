@@ -1,0 +1,89 @@
+name: desktop_app
+description: Desktop app for accounting system
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Design System
+  design_system:
+    path: ../../packages/design_system
+
+  # Core Packages
+  shared:
+    path: ../../packages/shared
+  core:
+    path: ../../packages/core
+  platform_bridge:
+    path: ../../packages/platform_bridge
+  networking:
+    path: ../../packages/networking
+  storage:
+    path: ../../packages/storage
+
+  # Feature Packages
+  accounting:
+    path: ../../packages/features/accounting
+  journal:
+    path: ../../packages/features/journal
+  customers:
+    path: ../../packages/features/customers
+  suppliers:
+    path: ../../packages/features/suppliers
+  sales:
+    path: ../../packages/features/sales
+  purchases:
+    path: ../../packages/features/purchases
+  payments:
+    path: ../../packages/features/payments
+  products:
+    path: ../../packages/features/products
+  inventory:
+    path: ../../packages/features/inventory
+  damages:
+    path: ../../packages/features/damages
+  production:
+    path: ../../packages/features/production
+  stock_count:
+    path: ../../packages/features/stock_count
+  reports:
+    path: ../../packages/features/reports
+  users:
+    path: ../../packages/features/users
+  settings:
+    path: ../../packages/features/settings
+  audit_log:
+    path: ../../packages/features/audit_log
+
+  # State Management
+  flutter_riverpod: ^2.4.9
+
+  # Navigation
+  go_router: ^13.0.0
+
+  # Localization
+  easy_localization: ^3.0.3
+
+  # Desktop specific
+  window_manager: ^0.3.7
+  tray_manager: ^0.2.0
+
+  # Utils
+  intl: ^0.18.1
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/translations/
