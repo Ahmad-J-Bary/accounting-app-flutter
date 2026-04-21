@@ -163,9 +163,14 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) => const Center(child: Text('Settings'));
 }
 
+class DashboardPage extends StatelessWidget {
+  const DashboardPage({super.key});
+  @override
+  Widget build(BuildContext context) => const Center(child: Text('Dashboard'));
+}
+
 class UsersPage extends StatelessWidget {
   const UsersPage({super.key});
   @override
   Widget build(BuildContext context) => const Center(child: Text('Users'));
-}
 }

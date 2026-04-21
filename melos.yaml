@@ -1,6 +1,5 @@
 name: accounting_app_flutter
 repository: https://github.com/yourusername/accounting-app-flutter
-sdkPath: .fvm/flutter_sdk
 
 command:
   bootstrap:

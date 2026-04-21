@@ -1,0 +1,8 @@
+# melos_managed_dependency_overrides: foundation,platform,products
+dependency_overrides:
+  foundation:
+    path: ..\\..\\foundation
+  platform:
+    path: ..\\..\\platform
+  products:
+    path: ..\\products

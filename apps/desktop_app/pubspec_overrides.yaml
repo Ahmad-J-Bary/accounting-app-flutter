@@ -1,0 +1,40 @@
+# melos_managed_dependency_overrides: accounting,app_shell,audit_log,damages,design_system,foundation,inventory,journal,partners,payments,platform,production,products,purchases,reports,sales,settings,stock_count,users
+dependency_overrides:
+  accounting:
+    path: ..\\..\\packages\\features\\accounting
+  app_shell:
+    path: ..\\..\\packages\\app_shell
+  audit_log:
+    path: ..\\..\\packages\\features\\audit_log
+  damages:
+    path: ..\\..\\packages\\features\\damages
+  design_system:
+    path: ..\\..\\packages\\design_system
+  foundation:
+    path: ..\\..\\packages\\foundation
+  inventory:
+    path: ..\\..\\packages\\features\\inventory
+  journal:
+    path: ..\\..\\packages\\features\\journal
+  partners:
+    path: ..\\..\\packages\\features\\partners
+  payments:
+    path: ..\\..\\packages\\features\\payments
+  platform:
+    path: ..\\..\\packages\\platform
+  production:
+    path: ..\\..\\packages\\features\\production
+  products:
+    path: ..\\..\\packages\\features\\products
+  purchases:
+    path: ..\\..\\packages\\features\\purchases
+  reports:
+    path: ..\\..\\packages\\features\\reports
+  sales:
+    path: ..\\..\\packages\\features\\sales
+  settings:
+    path: ..\\..\\packages\\features\\settings
+  stock_count:
+    path: ..\\..\\packages\\features\\stock_count
+  users:
+    path: ..\\..\\packages\\features\\users

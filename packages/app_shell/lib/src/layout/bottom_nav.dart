@@ -29,25 +29,25 @@ class BottomNav extends ConsumerWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               _NavItem(
-                icon: PhosphorIcons.squaresFour,
+                icon: PhosphorIcons.squaresFour(),
                 label: 'Home',
                 path: '/dashboard',
                 isSelected: currentPath == '/dashboard',
               ),
               _NavItem(
-                icon: PhosphorIcons.users,
+                icon: PhosphorIcons.users(),
                 label: 'Customers',
                 path: '/customers',
                 isSelected: currentPath == '/customers',
               ),
               _NavItem(
-                icon: PhosphorIcons.receipt,
+                icon: PhosphorIcons.receipt(),
                 label: 'Sales',
                 path: '/sales',
                 isSelected: currentPath == '/sales',
               ),
               _NavItem(
-                icon: PhosphorIcons.gear,
+                icon: PhosphorIcons.gear(),
                 label: 'Settings',
                 path: '/settings',
                 isSelected: currentPath == '/settings',

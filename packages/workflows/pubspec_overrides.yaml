@@ -1,0 +1,18 @@
+# melos_managed_dependency_overrides: accounting,foundation,inventory,journal,partners,platform,products,sales
+dependency_overrides:
+  accounting:
+    path: ..\\features\\accounting
+  foundation:
+    path: ..\\foundation
+  inventory:
+    path: ..\\features\\inventory
+  journal:
+    path: ..\\features\\journal
+  partners:
+    path: ..\\features\\partners
+  platform:
+    path: ..\\platform
+  products:
+    path: ..\\features\\products
+  sales:
+    path: ..\\features\\sales

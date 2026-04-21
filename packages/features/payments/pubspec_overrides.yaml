@@ -1,0 +1,10 @@
+# melos_managed_dependency_overrides: accounting,foundation,partners,platform
+dependency_overrides:
+  accounting:
+    path: ..\\accounting
+  foundation:
+    path: ..\\..\\foundation
+  partners:
+    path: ..\\partners
+  platform:
+    path: ..\\..\\platform

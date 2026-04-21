@@ -1,0 +1,14 @@
+# melos_managed_dependency_overrides: accounting,foundation,journal,partners,platform,products
+dependency_overrides:
+  accounting:
+    path: ..\\accounting
+  foundation:
+    path: ..\\..\\foundation
+  journal:
+    path: ..\\journal
+  partners:
+    path: ..\\partners
+  platform:
+    path: ..\\..\\platform
+  products:
+    path: ..\\products

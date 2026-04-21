@@ -1,0 +1,10 @@
+# melos_managed_dependency_overrides: foundation,inventory,platform,products
+dependency_overrides:
+  foundation:
+    path: ..\\..\\foundation
+  inventory:
+    path: ..\\inventory
+  platform:
+    path: ..\\..\\platform
+  products:
+    path: ..\\products
