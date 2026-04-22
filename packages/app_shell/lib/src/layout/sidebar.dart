@@ -52,6 +52,24 @@ class Sidebar extends ConsumerWidget {
                   path: '/inventory',
                   isSelected: currentPath == '/inventory',
                 ),
+                // الأصول
+                ExpansionTile(
+                  leading: PhosphorIcon(PhosphorIcons.buildings()),
+                  title: const Text('الأصول'),
+                  initiallyExpanded: currentPath.startsWith('/assets'),
+                  children: [
+                    _SidebarSubItem(
+                      label: 'الموجودات الثابتة',
+                      path: '/assets/fixed',
+                      isSelected: currentPath == '/assets/fixed',
+                    ),
+                    _SidebarSubItem(
+                      label: 'المستهلكات',
+                      path: '/assets/consumables',
+                      isSelected: currentPath == '/assets/consumables',
+                    ),
+                  ],
+                ),
                 const Divider(height: 32),
                 _SidebarItem(
                   icon: PhosphorIcons.receipt(),
@@ -189,6 +207,54 @@ class _SidebarItem extends StatelessWidget {
               style: TextStyle(
                 fontSize: 14,
                 fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
+                color: isSelected ? AppColors.primary : AppColors.textSecondary,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _SidebarSubItem extends StatelessWidget {
+  final String label;
+  final String path;
+  final bool isSelected;
+
+  const _SidebarSubItem({
+    required this.label,
+    required this.path,
+    required this.isSelected,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () => context.push(path),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 10),
+        decoration: BoxDecoration(
+          color: isSelected ? AppColors.primary.withOpacity(0.05) : null,
+          border: isSelected
+              ? const Border(
+                  right: BorderSide(color: AppColors.primary, width: 2),
+                )
+              : null,
+        ),
+        child: Row(
+          children: [
+            Icon(
+              PhosphorIcons.dot(),
+              size: 12,
+              color: isSelected ? AppColors.primary : AppColors.textSecondary,
+            ),
+            const SizedBox(width: 8),
+            Text(
+              label,
+              style: TextStyle(
+                fontSize: 13,
+                fontWeight: isSelected ? FontWeight.w500 : FontWeight.normal,
                 color: isSelected ? AppColors.primary : AppColors.textSecondary,
               ),
             ),
