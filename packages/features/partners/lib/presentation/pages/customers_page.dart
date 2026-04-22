@@ -47,9 +47,7 @@ class _CustomersPageState extends ConsumerState<CustomersPage> {
       context: context,
       builder: (context) => AlertDialog(
         title: Text(isEditing ? 'تعديل بيانات العميل' : 'إضافة عميل جديد'),
-        content: Directionality(
-          textDirection: TextDirection.rtl,
-          child: SingleChildScrollView(
+        content: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -89,7 +87,6 @@ class _CustomersPageState extends ConsumerState<CustomersPage> {
                 ),
               ],
             ),
-          ),
         ),
         actions: [
           TextButton(
@@ -205,11 +202,9 @@ class _CustomersPageState extends ConsumerState<CustomersPage> {
   Widget build(BuildContext context) {
     final customersAsync = ref.watch(customersListProvider);
 
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: Scaffold(
-        backgroundColor: AppColors.background,
-        body: customersAsync.when(
+    return Scaffold(
+      backgroundColor: AppColors.background,
+      body: customersAsync.when(
           data: (customers) {
             final filteredCustomers = _filterCustomers(customers);
             final totalBalance = customers.fold<double>(0, (sum, c) => sum + c.currentBalance);
@@ -464,7 +459,6 @@ class _CustomersPageState extends ConsumerState<CustomersPage> {
             ),
           ),
         ),
-      ),
     );
   }
 
@@ -472,12 +466,10 @@ class _CustomersPageState extends ConsumerState<CustomersPage> {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
-      builder: (context) => Directionality(
-        textDirection: TextDirection.rtl,
-        child: Container(
-          height: MediaQuery.of(context).size.height * 0.8,
-          padding: const EdgeInsets.all(24),
-          child: Column(
+      builder: (context) => Container(
+        height: MediaQuery.of(context).size.height * 0.8,
+        padding: const EdgeInsets.all(24),
+        child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
@@ -614,7 +606,6 @@ class _CustomersPageState extends ConsumerState<CustomersPage> {
             ],
           ),
         ),
-      ),
     );
   }
 }

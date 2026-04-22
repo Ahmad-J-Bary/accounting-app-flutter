@@ -46,48 +46,45 @@ class _SuppliersPageState extends ConsumerState<SuppliersPage> {
       context: context,
       builder: (context) => AlertDialog(
         title: Text(isEditing ? 'تعديل بيانات المورد' : 'إضافة مورد جديد'),
-        content: Directionality(
-          textDirection: TextDirection.rtl,
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                TextField(
-                  controller: nameController,
-                  decoration: const InputDecoration(
-                    labelText: 'اسم المورد *',
-                    hintText: 'أدخل اسم المورد',
-                  ),
+        content: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextField(
+                controller: nameController,
+                decoration: const InputDecoration(
+                  labelText: 'اسم المورد *',
+                  hintText: 'أدخل اسم المورد',
                 ),
-                const SizedBox(height: 16),
-                TextField(
-                  controller: phoneController,
-                  decoration: const InputDecoration(
-                    labelText: 'رقم الهاتف *',
-                    hintText: '05xxxxxxxx',
-                  ),
-                  keyboardType: TextInputType.phone,
+              ),
+              const SizedBox(height: 16),
+              TextField(
+                controller: phoneController,
+                decoration: const InputDecoration(
+                  labelText: 'رقم الهاتف *',
+                  hintText: '05xxxxxxxx',
                 ),
-                const SizedBox(height: 16),
-                TextField(
-                  controller: emailController,
-                  decoration: const InputDecoration(
-                    labelText: 'البريد الإلكتروني',
-                    hintText: 'example@email.com',
-                  ),
-                  keyboardType: TextInputType.emailAddress,
+                keyboardType: TextInputType.phone,
+              ),
+              const SizedBox(height: 16),
+              TextField(
+                controller: emailController,
+                decoration: const InputDecoration(
+                  labelText: 'البريد الإلكتروني',
+                  hintText: 'example@email.com',
                 ),
-                const SizedBox(height: 16),
-                TextField(
-                  controller: addressController,
-                  decoration: const InputDecoration(
-                    labelText: 'العنوان',
-                    hintText: 'عنوان المورد',
-                  ),
-                  maxLines: 2,
+                keyboardType: TextInputType.emailAddress,
+              ),
+              const SizedBox(height: 16),
+              TextField(
+                controller: addressController,
+                decoration: const InputDecoration(
+                  labelText: 'العنوان',
+                  hintText: 'عنوان المورد',
                 ),
-              ],
-            ),
+                maxLines: 2,
+              ),
+            ],
           ),
         ),
         actions: [
@@ -204,11 +201,9 @@ class _SuppliersPageState extends ConsumerState<SuppliersPage> {
   Widget build(BuildContext context) {
     final suppliersAsync = ref.watch(suppliersListProvider);
 
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: Scaffold(
-        backgroundColor: AppColors.background,
-        body: suppliersAsync.when(
+    return Scaffold(
+      backgroundColor: AppColors.background,
+      body: suppliersAsync.when(
           data: (suppliers) {
             final filteredSuppliers = _filterSuppliers(suppliers);
             final totalBalance = suppliers.fold<double>(0, (sum, s) => sum + s.currentBalance);
@@ -465,7 +460,6 @@ class _SuppliersPageState extends ConsumerState<SuppliersPage> {
             ),
           ),
         ),
-      ),
     );
   }
 }
@@ -509,3 +503,4 @@ class _SummaryCard extends StatelessWidget {
     );
   }
 }
+

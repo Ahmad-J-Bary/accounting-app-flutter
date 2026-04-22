@@ -16,7 +16,7 @@ class DashboardPage extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'dashboard'.tr(),
+              'لوحة التحكم',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             const SizedBox(height: 24),
@@ -69,10 +69,10 @@ class DashboardPage extends ConsumerWidget {
                 Expanded(
                   flex: 2,
                   child: AppCard(
-                    title: 'Recent Sales',
+                    title: 'المبيعات الأخيرة',
                     trailing: TextButton(
                       onPressed: () {},
-                      child: Text('View All'.tr()),
+                      child: Text('عرض الكل'),
                     ),
                     child: Column(
                       children: [
@@ -104,27 +104,27 @@ class DashboardPage extends ConsumerWidget {
                 const SizedBox(width: 16),
                 Expanded(
                   child: AppCard(
-                    title: 'Quick Actions',
+                    title: 'إجراءات سريعة',
                     child: Column(
                       children: [
                         _QuickActionButton(
                           icon: PhosphorIcons.plus,
-                          label: 'New Sale',
+                          label: 'بيع جديد',
                           onTap: () {},
                         ),
                         _QuickActionButton(
                           icon: PhosphorIcons.userPlus,
-                          label: 'Add Customer',
+                          label: 'إضافة عميل',
                           onTap: () {},
                         ),
                         _QuickActionButton(
                           icon: PhosphorIcons.package,
-                          label: 'Add Product',
+                          label: 'إضافة منتج',
                           onTap: () {},
                         ),
                         _QuickActionButton(
                           icon: PhosphorIcons.receipt,
-                          label: 'New Invoice',
+                          label: 'فاتورة جديدة',
                           onTap: () {},
                         ),
                       ],

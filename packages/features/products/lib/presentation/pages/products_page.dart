@@ -49,53 +49,50 @@ class _ProductsPageState extends ConsumerState<ProductsPage> {
       context: context,
       builder: (context) => AlertDialog(
         title: Text(isEditing ? 'تعديل منتج' : 'إضافة منتج جديد'),
-        content: Directionality(
-          textDirection: TextDirection.rtl,
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                TextField(
-                  controller: nameController,
-                  decoration: const InputDecoration(
-                    labelText: 'اسم المنتج *',
-                    hintText: 'أدخل اسم المنتج',
-                  ),
+        content: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextField(
+                controller: nameController,
+                decoration: const InputDecoration(
+                  labelText: 'اسم المنتج *',
+                  hintText: 'أدخل اسم المنتج',
                 ),
-                const SizedBox(height: 16),
-                TextField(
-                  controller: codeController,
-                  decoration: const InputDecoration(
-                    labelText: 'كود المنتج *',
-                    hintText: 'PRD-XXX',
-                  ),
+              ),
+              const SizedBox(height: 16),
+              TextField(
+                controller: codeController,
+                decoration: const InputDecoration(
+                  labelText: 'كود المنتج *',
+                  hintText: 'PRD-XXX',
                 ),
-                const SizedBox(height: 16),
-                Row(
-                  children: [
-                    Expanded(
-                      child: TextField(
-                        controller: unitPriceController,
-                        decoration: const InputDecoration(
-                          labelText: 'سعر البيع',
-                        ),
-                        keyboardType: TextInputType.number,
+              ),
+              const SizedBox(height: 16),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      controller: unitPriceController,
+                      decoration: const InputDecoration(
+                        labelText: 'سعر البيع',
                       ),
+                      keyboardType: TextInputType.number,
                     ),
-                    const SizedBox(width: 16),
-                    Expanded(
-                      child: TextField(
-                        controller: costController,
-                        decoration: const InputDecoration(
-                          labelText: 'سعر التكلفة',
-                        ),
-                        keyboardType: TextInputType.number,
+                  ),
+                  const SizedBox(width: 16),
+                  Expanded(
+                    child: TextField(
+                      controller: costController,
+                      decoration: const InputDecoration(
+                        labelText: 'سعر التكلفة',
                       ),
+                      keyboardType: TextInputType.number,
                     ),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
         actions: [
@@ -213,11 +210,9 @@ class _ProductsPageState extends ConsumerState<ProductsPage> {
   Widget build(BuildContext context) {
     final productsAsync = ref.watch(productsListProvider);
 
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: Scaffold(
-        backgroundColor: AppColors.background,
-        body: productsAsync.when(
+    return Scaffold(
+      backgroundColor: AppColors.background,
+      body: productsAsync.when(
           data: (products) {
             final filteredProducts = _filterProducts(products);
             final activeCount = products.where((p) => p.isActive).length;
@@ -454,7 +449,6 @@ class _ProductsPageState extends ConsumerState<ProductsPage> {
             ),
           ),
         ),
-      ),
     );
   }
 }
@@ -498,3 +492,4 @@ class _SummaryCard extends StatelessWidget {
     );
   }
 }
+
