@@ -6,3 +6,4 @@ library assets;
 
 export 'src/domain/domain.dart';
 export 'src/application/application.dart';
+export 'src/infrastructure/infrastructure.dart';

@@ -5,24 +5,39 @@ import '../usecases/usecases.dart';
 /// Provider للـ Audit Log Service
 final auditLogServiceProvider = Provider<AuditLogService>((ref) {
   // TODO: Implement actual AuditLogService
-  throw UnimplementedError('AuditLogService not implemented yet');
+  return _PlaceholderAuditLogService();
 });
 
-/// Repository Providers (سيتم ربطها بالتنفيذ الفعلي لاحقاً)
+/// Repository Providers
 final fixedAssetRepositoryProvider = Provider<FixedAssetRepository>((ref) {
-  // TODO: Implement FixedAssetRepositoryImpl
-  throw UnimplementedError('FixedAssetRepository not implemented yet');
+  return FixedAssetRepositoryImpl();
 });
 
 final consumableRepositoryProvider = Provider<ConsumableRepository>((ref) {
-  // TODO: Implement ConsumableRepositoryImpl
-  throw UnimplementedError('ConsumableRepository not implemented yet');
+  return ConsumableRepositoryImpl();
 });
 
 final assetMovementRepositoryProvider = Provider<AssetMovementRepository>((ref) {
-  // TODO: Implement AssetMovementRepositoryImpl
-  throw UnimplementedError('AssetMovementRepository not implemented yet');
+  return AssetMovementRepositoryImpl();
 });
+
+/// خدمة Audit Log مؤقتة
+class _PlaceholderAuditLogService implements AuditLogService {
+  @override
+  Future<void> log({
+    required String action,
+    required String entityType,
+    required String entityId,
+    required String userId,
+    Map<String, dynamic>? details,
+  }) async {
+    // TODO: Implement actual audit logging to database
+    print('[AUDIT] $action - $entityType:$entityId by $userId');
+    if (details != null) {
+      print('  Details: $details');
+    }
+  }
+}
 
 /// Fixed Assets Use Cases Providers
 final createFixedAssetUseCaseProvider = Provider<CreateFixedAssetUseCase>((ref) {
