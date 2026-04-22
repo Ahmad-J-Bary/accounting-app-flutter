@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:core/core.dart';
+import 'package:foundation/foundation.dart';
 import 'package:products/products.dart';
 
 class GetProductsUseCase extends UseCase<List<Product>, NoParams> {

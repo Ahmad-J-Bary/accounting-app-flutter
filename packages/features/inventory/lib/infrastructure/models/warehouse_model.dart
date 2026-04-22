@@ -1,4 +1,5 @@
 import 'package:inventory/inventory.dart';
+import 'package:foundation/foundation.dart';
 import 'dart:convert';
 
 class WarehouseModel {

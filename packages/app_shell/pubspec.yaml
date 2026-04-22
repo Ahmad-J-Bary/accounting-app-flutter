@@ -19,6 +19,12 @@ dependencies:
   foundation:
     path: ../foundation
 
+  # Feature Packages
+  partners:
+    path: ../features/partners
+  products:
+    path: ../features/products
+
   # State Management
   flutter_riverpod: ^2.4.9
 

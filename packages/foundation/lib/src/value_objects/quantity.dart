@@ -1,4 +1,4 @@
-import 'package:shared/shared.dart';
+import 'package:foundation/foundation.dart';
 
 class Quantity extends ValueObject<double> {
   @override

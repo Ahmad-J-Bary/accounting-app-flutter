@@ -1,4 +1,5 @@
 import 'package:partners/partners.dart';
+import 'package:foundation/foundation.dart';
 import 'dart:convert';
 
 class CustomerModel {

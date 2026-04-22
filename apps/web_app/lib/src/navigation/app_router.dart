@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:app_shell/src/layout/app_shell.dart';
 import 'package:partners/partners.dart';
 import 'package:products/products.dart';
-import 'package:products/presentation/pages/products_page.dart';
+import 'package:inventory/inventory.dart';
 
 enum AppRoute {
   home,
@@ -53,7 +53,7 @@ class AppRouter {
       GoRoute(
         path: '/inventory',
         name: AppRoute.inventory.name,
-        builder: (context, state) => const AppShell(child: InventoryPage()),
+        builder: (context, state) => const AppShell(child: WarehousesPage()),
       ),
       GoRoute(
         path: '/sales',
@@ -101,12 +101,6 @@ class AppRouter {
 
 
 // Placeholder pages for features not yet implemented
-class InventoryPage extends StatelessWidget {
-  const InventoryPage({super.key});
-  @override
-  Widget build(BuildContext context) => const Center(child: Text('Inventory'));
-}
-
 class SalesPage extends StatelessWidget {
   const SalesPage({super.key});
   @override

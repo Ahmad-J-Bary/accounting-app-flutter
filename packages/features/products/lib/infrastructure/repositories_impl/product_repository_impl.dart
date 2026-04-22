@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:core/core.dart';
+import 'package:foundation/foundation.dart';
 import 'package:products/products.dart';
 
 class ProductRepositoryImpl implements ProductRepository {
@@ -14,7 +14,7 @@ class ProductRepositoryImpl implements ProductRepository {
       );
       return Right(product);
     } catch (e) {
-      return Left(NotFoundFailure('Product not found'));
+      return Left(GenericFailure('Product not found'));
     }
   }
 
@@ -23,7 +23,7 @@ class ProductRepositoryImpl implements ProductRepository {
     try {
       return Right(_cache);
     } catch (e) {
-      return Left(CacheFailure(e.toString()));
+      return Left(GenericFailure(e.toString()));
     }
   }
 
@@ -33,7 +33,7 @@ class ProductRepositoryImpl implements ProductRepository {
       _cache.add(entity);
       return Right(entity);
     } catch (e) {
-      return Left(CacheFailure(e.toString()));
+      return Left(GenericFailure(e.toString()));
     }
   }
 
@@ -42,12 +42,12 @@ class ProductRepositoryImpl implements ProductRepository {
     try {
       final index = _cache.indexWhere((p) => p.id == entity.id);
       if (index == -1) {
-        return Left(NotFoundFailure('Product not found'));
+        return Left(GenericFailure('Product not found'));
       }
       _cache[index] = entity;
       return Right(entity);
     } catch (e) {
-      return Left(CacheFailure(e.toString()));
+      return Left(GenericFailure(e.toString()));
     }
   }
 
@@ -57,7 +57,7 @@ class ProductRepositoryImpl implements ProductRepository {
       _cache.removeWhere((p) => p.id == id);
       return const Right(unit);
     } catch (e) {
-      return Left(CacheFailure(e.toString()));
+      return Left(GenericFailure(e.toString()));
     }
   }
 
@@ -67,7 +67,7 @@ class ProductRepositoryImpl implements ProductRepository {
       final filtered = _cache.where((p) => p.type == type).toList();
       return Right(filtered);
     } catch (e) {
-      return Left(CacheFailure(e.toString()));
+      return Left(GenericFailure(e.toString()));
     }
   }
 
@@ -77,7 +77,7 @@ class ProductRepositoryImpl implements ProductRepository {
       final filtered = _cache.where((p) => p.categoryId == categoryId).toList();
       return Right(filtered);
     } catch (e) {
-      return Left(CacheFailure(e.toString()));
+      return Left(GenericFailure(e.toString()));
     }
   }
 
@@ -91,7 +91,7 @@ class ProductRepositoryImpl implements ProductRepository {
           .toList();
       return Right(filtered);
     } catch (e) {
-      return Left(CacheFailure(e.toString()));
+      return Left(GenericFailure(e.toString()));
     }
   }
 
@@ -104,7 +104,7 @@ class ProductRepositoryImpl implements ProductRepository {
       );
       return Right(product);
     } catch (e) {
-      return Left(NotFoundFailure('Product with code $code not found'));
+      return Left(GenericFailure('Product with code $code not found'));
     }
   }
 }

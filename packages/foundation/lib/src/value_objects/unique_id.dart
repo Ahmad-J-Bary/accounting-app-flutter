@@ -1,4 +1,4 @@
-import 'package:shared/shared.dart';
+import 'package:foundation/foundation.dart';
 import 'package:uuid/uuid.dart';
 
 class UniqueId extends ValueObject<String> {

@@ -1,7 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:platform/local_db/local_db.dart';
 import 'package:foundation/foundation.dart';
 import 'package:partners/partners.dart';
+import 'package:partners/infrastructure/database/app_database.dart';
+import 'package:sqflite/sqflite.dart';
 
 class SupplierRepositoryImpl implements PartnerRepository<Supplier> {
   final AppDatabase database;
@@ -32,7 +33,7 @@ class SupplierRepositoryImpl implements PartnerRepository<Supplier> {
       _cache[id] = supplier;
       return Right(supplier);
     } catch (e) {
-      return Left(Failure(message: 'Failed to get supplier: ${e.toString()}'));
+      return Left(GenericFailure('Failed to get supplier: ${e.toString()}'));
     }
   }
 
@@ -75,7 +76,7 @@ class SupplierRepositoryImpl implements PartnerRepository<Supplier> {
       }
       return Right(suppliers);
     } catch (e) {
-      return Left(Failure(message: 'Failed to get suppliers: ${e.toString()}'));
+      return Left(GenericFailure('Failed to get suppliers: ${e.toString()}'));
     }
   }
 
@@ -85,7 +86,7 @@ class SupplierRepositoryImpl implements PartnerRepository<Supplier> {
       _cache[entity.id] = entity;
       return Right(entity);
     } catch (e) {
-      return Left(Failure(message: 'Failed to create supplier: ${e.toString()}'));
+      return Left(GenericFailure('Failed to create supplier: ${e.toString()}'));
     }
   }
 
@@ -95,7 +96,7 @@ class SupplierRepositoryImpl implements PartnerRepository<Supplier> {
       _cache[entity.id] = entity.copyWith(updatedAt: DateTime.now());
       return Right(_cache[entity.id]!);
     } catch (e) {
-      return Left(Failure(message: 'Failed to update supplier: ${e.toString()}'));
+      return Left(GenericFailure('Failed to update supplier: ${e.toString()}'));
     }
   }
 
@@ -105,7 +106,7 @@ class SupplierRepositoryImpl implements PartnerRepository<Supplier> {
       _cache.remove(id);
       return const Right(unit);
     } catch (e) {
-      return Left(Failure(message: 'Failed to delete supplier: ${e.toString()}'));
+      return Left(GenericFailure('Failed to delete supplier: ${e.toString()}'));
     }
   }
 
@@ -124,7 +125,7 @@ class SupplierRepositoryImpl implements PartnerRepository<Supplier> {
         },
       );
     } catch (e) {
-      return Left(Failure(message: 'Supplier not found: ${e.toString()}'));
+      return Left(GenericFailure('Supplier not found: ${e.toString()}'));
     }
   }
 
@@ -144,7 +145,7 @@ class SupplierRepositoryImpl implements PartnerRepository<Supplier> {
         },
       );
     } catch (e) {
-      return Left(Failure(message: 'Failed to search suppliers: ${e.toString()}'));
+      return Left(GenericFailure('Failed to search suppliers: ${e.toString()}'));
     }
   }
 }

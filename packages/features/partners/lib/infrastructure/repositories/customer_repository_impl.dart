@@ -1,7 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:platform/local_db/local_db.dart';
 import 'package:foundation/foundation.dart';
 import 'package:partners/partners.dart';
+import 'package:partners/infrastructure/database/app_database.dart';
+import 'package:sqflite/sqflite.dart';
 
 class CustomerRepositoryImpl implements PartnerRepository<Customer> {
   final AppDatabase database;
@@ -32,7 +33,7 @@ class CustomerRepositoryImpl implements PartnerRepository<Customer> {
       _cache[id] = customer;
       return Right(customer);
     } catch (e) {
-      return Left(Failure(message: 'Failed to get customer: ${e.toString()}'));
+      return Left(GenericFailure(e.toString()));
     }
   }
 
@@ -75,7 +76,7 @@ class CustomerRepositoryImpl implements PartnerRepository<Customer> {
       }
       return Right(customers);
     } catch (e) {
-      return Left(Failure(message: 'Failed to get customers: ${e.toString()}'));
+      return Left(GenericFailure(e.toString()));
     }
   }
 
@@ -85,7 +86,7 @@ class CustomerRepositoryImpl implements PartnerRepository<Customer> {
       _cache[entity.id] = entity;
       return Right(entity);
     } catch (e) {
-      return Left(Failure(message: 'Failed to create customer: ${e.toString()}'));
+      return Left(GenericFailure(e.toString()));
     }
   }
 
@@ -95,7 +96,7 @@ class CustomerRepositoryImpl implements PartnerRepository<Customer> {
       _cache[entity.id] = entity.copyWith(updatedAt: DateTime.now());
       return Right(_cache[entity.id]!);
     } catch (e) {
-      return Left(Failure(message: 'Failed to update customer: ${e.toString()}'));
+      return Left(GenericFailure(e.toString()));
     }
   }
 
@@ -105,7 +106,7 @@ class CustomerRepositoryImpl implements PartnerRepository<Customer> {
       _cache.remove(id);
       return const Right(unit);
     } catch (e) {
-      return Left(Failure(message: 'Failed to delete customer: ${e.toString()}'));
+      return Left(GenericFailure(e.toString()));
     }
   }
 
@@ -124,7 +125,7 @@ class CustomerRepositoryImpl implements PartnerRepository<Customer> {
         },
       );
     } catch (e) {
-      return Left(Failure(message: 'Customer not found: ${e.toString()}'));
+      return Left(GenericFailure(e.toString()));
     }
   }
 
@@ -144,7 +145,7 @@ class CustomerRepositoryImpl implements PartnerRepository<Customer> {
         },
       );
     } catch (e) {
-      return Left(Failure(message: 'Failed to search customers: ${e.toString()}'));
+      return Left(GenericFailure(e.toString()));
     }
   }
 }
